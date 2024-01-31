@@ -1,9 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
 import "./App.css";
 
-
 function App() {
-    return <div>MY </div>;
+    return <div>Have fun </div>;
 }
 
 export default App;
