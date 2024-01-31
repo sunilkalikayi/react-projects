@@ -10,6 +10,7 @@ const RockPaperScissor = () => {
     const [player] = useState("Sunil Kalikayi");
     const [computerScore] = useState(0);
     const [playerScore] = useState(0);
+
     const metaData = [
         {
             id: 1,
@@ -52,6 +53,7 @@ const RockPaperScissor = () => {
             ),
         },
     ];
+
     const [wonPlayer] = useState("Computer");
     const [computerChoice, setComputerChoice] = useState<RockPaperScissorDataTypes>(metaData[3]);
     const [playerChoice, setPlayerChoice] = useState<RockPaperScissorDataTypes>(metaData[4]);
@@ -110,17 +112,22 @@ const RockPaperScissor = () => {
                     width={100}
                 />
             </div>
+
             {/* Display Section */}
             <div className="flex items-center justify-center gap-12 h-[260px]">
                 {/* Computer Display */}
                 <div>{computerChoice?.img}</div>
+
                 <div>VS</div>
+
                 {/* Player Display */}
                 <div>{playerChoice?.img}</div>
             </div>
+
             {/* Choose Your Action Section  */}
             <div className="mt-4">
                 <p className="text-center text-[24px]">Choose your move, rock paper or scissors?</p>
+
                 {/* Button section */}
                 <div className="text-[24px] font-semibold flex justify-evenly my-6  items-center">
                     <button
@@ -129,12 +136,14 @@ const RockPaperScissor = () => {
                     >
                         Rock
                     </button>
+
                     <button
                         className="bg-[#DF2E38] h-[60px] w-[175px] rounded-[10px] uppercase text-white"
                         onClick={() => handlePlayerChoice("paper")}
                     >
                         Paper
                     </button>
+
                     <button
                         className="bg-[#DF2E38] h-[60px] w-[175px] rounded-[10px] uppercase text-white"
                         onClick={() => handlePlayerChoice("scissor")}
