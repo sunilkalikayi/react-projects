@@ -192,20 +192,18 @@ const RockPaperScissor = () => {
             </div>
             {/* Results Section */}
             <div className=" font-semibold text-[64px] my-4 text-center">
-                {wonPlayer ? (
-                    isDraw ? (
-                        <p className="text-[#e88651]">Draw ...!</p>
-                    ) : (
-                        <div className="flex items-center justify-center">
-                            <p className="text-[#54c78d]">{wonPlayer} WON ...!</p>
-                            <img
-                                src="/src/assets/rock-paper-scissor/images/winEmoji.png"
-                                alt="win Emoji"
-                                height={100}
-                                width={100}
-                            />
-                        </div>
-                    )
+                {isDraw ? (
+                    <p className="text-[#e88651]">Draw ...!</p>
+                ) : wonPlayer ? (
+                    <div className="flex items-center justify-center">
+                        <p className="text-[#54c78d]">{wonPlayer} WON ...!</p>
+                        <img
+                            src="/src/assets/rock-paper-scissor/images/winEmoji.png"
+                            alt="win Emoji"
+                            height={100}
+                            width={100}
+                        />
+                    </div>
                 ) : (
                     <p>Start Game..!</p>
                 )}
