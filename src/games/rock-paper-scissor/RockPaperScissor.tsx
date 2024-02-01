@@ -8,8 +8,8 @@ import { RockPaperScissorDataTypes } from "../../types/RockPaperScissorTypes";
 
 const RockPaperScissor = () => {
     const [player] = useState("Sunil Kalikayi");
-    const [computerScore] = useState(0);
-    const [playerScore] = useState(0);
+    const [computerScore, setComputerScore] = useState(0);
+    const [playerScore, setPlayerScore] = useState(0);
 
     const metaData = [
         {
@@ -53,26 +53,49 @@ const RockPaperScissor = () => {
             ),
         },
     ];
-
-    const [wonPlayer] = useState("Computer");
+    const [isDraw, setIsDraw] = useState(false);
+    const [wonPlayer, setWonPlayer] = useState<string>();
     const [computerChoice, setComputerChoice] = useState<RockPaperScissorDataTypes>(metaData[3]);
     const [playerChoice, setPlayerChoice] = useState<RockPaperScissorDataTypes>(metaData[4]);
-    console.log("choise", computerChoice, playerChoice);
 
     const evaluateWinner = () => {
         // Comparing objects
+        // if both choice are equal then it is draw
         const isEqual = _.isEqual(computerChoice, playerChoice);
         if (isEqual) {
-            console.log("Objects are equal.");
-        } else {
-            console.log("Objects are not equal.");
+            setIsDraw(true);
+        }
+
+        //Rock Beats Scissor -> Who choses Rock will Win
+        if (computerChoice?.code == "rock" && playerChoice?.code == "scissor") {
+            setWonPlayer("Computer");
+            setComputerScore((score) => score + 1);
+        } else if (playerChoice?.code == "rock" && computerChoice?.code == "scissor") {
+            setWonPlayer(player);
+            setPlayerScore((score) => score + 1);
+        }
+        // Scissor beats Paper -> Who choses Scissor will Win
+        else if (computerChoice?.code == "scissor" && playerChoice?.code == "paper") {
+            setWonPlayer("Computer");
+            setComputerScore((score) => score + 1);
+        } else if (playerChoice?.code == "scissor" && computerChoice?.code == "paper") {
+            setWonPlayer(player);
+            setPlayerScore((score) => score + 1);
+        }
+        // Paper beats Rock -> Who choses Paper will Win
+        else if (computerChoice?.code == "paper" && playerChoice?.code == "rock") {
+            setWonPlayer("Computer");
+            setComputerScore((score) => score + 1);
+        } else if (playerChoice?.code == "paper" && computerChoice?.code == "rock") {
+            setWonPlayer(player);
+            setPlayerScore((score) => score + 1);
         }
     };
 
     const handlePlayerChoice = (code: string) => {
+        alert();
         // Find the element with the specified name
         const playerSelection = _.find(metaData, { code });
-        console.log("player selectrio is", playerSelection);
         if (playerSelection) setPlayerChoice(playerSelection);
 
         // select random hand gesture
@@ -81,6 +104,9 @@ const RockPaperScissor = () => {
 
         evaluateWinner();
     };
+    console.log("isDraw", isDraw);
+    console.log("wonPlayer", wonPlayer);
+    console.log("score", computerScore, playerScore);
 
     return (
         <section className="px-[180px] text-[32px]">
@@ -103,14 +129,24 @@ const RockPaperScissor = () => {
             </div>
 
             {/* Results Section */}
-            <div className="flex items-center justify-center font-semibold text-[64px] my-4">
-                <p>{wonPlayer} WON !</p>
-                <img
-                    src="/src/assets/rock-paper-scissor/images/winEmoji.png"
-                    alt="win Emoji"
-                    height={100}
-                    width={100}
-                />
+            <div className=" font-semibold text-[64px] my-4 text-center">
+                {wonPlayer ? (
+                    isDraw ? (
+                        <p>Draw ...!</p>
+                    ) : (
+                        <div className="flex items-center justify-center">
+                            <p>{wonPlayer} WON ...!</p>
+                            <img
+                                src="/src/assets/rock-paper-scissor/images/winEmoji.png"
+                                alt="win Emoji"
+                                height={100}
+                                width={100}
+                            />
+                        </div>
+                    )
+                ) : (
+                    <p>Start Game..!</p>
+                )}
             </div>
 
             {/* Display Section */}
