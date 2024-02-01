@@ -32,7 +32,7 @@ const RockPaperScissor = () => {
         {
             id: 1,
             code: "rock",
-            img: <RockIcon height={160} width={200} />,
+            img: <RockIcon height={180} width={200} />,
         },
         {
             id: 2,
