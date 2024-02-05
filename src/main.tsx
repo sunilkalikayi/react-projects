@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
+import DailPad from "./dailPad/DailPad.tsx";
 import RPSCoverPage from "./games/rock-paper-scissor/RPSCoverPage.tsx";
 import RockPaperScissor from "./games/rock-paper-scissor/RockPaperScissor.tsx";
 import "./index.css";
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
+    },
+    {
+        path: "/dail-pad",
+        element: <DailPad />,
     },
     {
         path: "/rock-paper-scissor",
