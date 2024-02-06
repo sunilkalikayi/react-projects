@@ -4,8 +4,8 @@ import "./App.css";
 function App() {
     const navigate = useNavigate();
     return (
-        <section className="m-4">
-            <p className="text-[32px] font-semibold my-4">kalikayi Projects</p>
+        <section className="m-20">
+            <p className="text-[32px] font-semibold my-10">kalikayi Projects</p>
             <section className="flex gap-4">
                 <button
                     onClick={() => {
