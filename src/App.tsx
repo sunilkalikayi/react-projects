@@ -11,7 +11,6 @@ function App() {
                     onClick={() => {
                         navigate("/rock-paper-scissor");
                     }}
-                    
                     className="w-[220px] h-[100px] flex items-center justify-center bg-[#E5E5E5] rounded-[15px] font-semibold"
                 >
                     Rock-Paper-Scissor
@@ -22,7 +21,15 @@ function App() {
                     }}
                     className="w-[220px] h-[100px] flex items-center justify-center bg-[#E5E5E5] rounded-[15px] font-semibold"
                 >
-                    Number Dail Pad 
+                    Number Dail Pad
+                </button>
+                <button
+                    onClick={() => {
+                        navigate("/calculator");
+                    }}
+                    className="w-[220px] h-[100px] flex items-center justify-center bg-[#E5E5E5] rounded-[15px] font-semibold"
+                >
+                    Calculator
                 </button>
             </section>
         </section>
