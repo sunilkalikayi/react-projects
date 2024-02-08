@@ -4,14 +4,16 @@ import DailPadClearIcon from "../assets/icons/DailPadClearIcon";
 const Calculator = () => {
     // State to manage the input text
     const [expression, setExpression] = useState("");
+
+    //State to store the result
     const [result, setResult] = useState("");
 
-    // Function to handle adding input to the text
+    // Function to handle adding input to the expression
     const handleSetInput = (input: string) => {
         setExpression((val) => val + input);
     };
 
-    // Function to handle clearing the last character from the text
+    // Function to handle clearing the last character from the expression
     const handleClear = () => {
         setExpression((prevState) => prevState?.slice(0, -1));
     };
