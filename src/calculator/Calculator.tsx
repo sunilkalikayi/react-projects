@@ -20,7 +20,6 @@ const Calculator = () => {
     const handleEvaluate = () => {
         const res = eval(expression);
         setResult(res);
-        console.log("result is", res);
     };
     return (
         <section className="max-w-fit border p-6 text-[21px] mx-auto mt-[50px]">
@@ -38,7 +37,7 @@ const Calculator = () => {
                 <div className="flex gap-4">
                     {/* Number buttons */}
                     <button
-                        className="h-[56px] w-[192px] bg-[#EFEFEF] rounded-[15px]"
+                        className="h-[56px] w-[96px] bg-[#EFEFEF] rounded-[15px]"
                         onClick={() => {
                             setExpression("");
                             setResult("");
@@ -46,9 +45,25 @@ const Calculator = () => {
                     >
                         AC
                     </button>
+                    <button
+                        className="h-[56px] w-[40px] bg-[#EFEFEF] rounded-[15px]"
+                        onClick={() => {
+                            handleSetInput("(");
+                        }}
+                    >
+                        {"("}
+                    </button>
+                    <button
+                        className="h-[56px] w-[40px] bg-[#EFEFEF] rounded-[15px]"
+                        onClick={() => {
+                            handleSetInput(")");
+                        }}
+                    >
+                        {")"}
+                    </button>
 
                     <button
-                        className="h-[56px] w-[96px] bg-[#EFEFEF] rounded-[15px] ml-auto"
+                        className="h-[56px] w-[96px] bg-[#EFEFEF] rounded-[15px] "
                         onClick={() => {
                             handleSetInput("%");
                         }}
