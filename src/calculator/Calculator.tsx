@@ -41,6 +41,7 @@ const Calculator = () => {
                         className="h-[56px] w-[192px] bg-[#EFEFEF] rounded-[15px]"
                         onClick={() => {
                             setExpression("");
+                            setResult("");
                         }}
                     >
                         AC
