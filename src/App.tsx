@@ -31,6 +31,14 @@ function App() {
                 >
                     Calculator
                 </button>
+                <button
+                    onClick={() => {
+                        navigate("/timer");
+                    }}
+                    className="w-[220px] h-[100px] flex items-center justify-center bg-[#E5E5E5] rounded-[15px] font-semibold"
+                >
+                    Timer
+                </button>
             </section>
         </section>
     );

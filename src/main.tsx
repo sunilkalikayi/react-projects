@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import Calculator from "./calculator/Calculator.tsx";
+import Timer from "./clock/Timer.tsx";
 import DailPad from "./dailPad/DailPad.tsx";
 import RPSCoverPage from "./games/rock-paper-scissor/RPSCoverPage.tsx";
 import RockPaperScissor from "./games/rock-paper-scissor/RockPaperScissor.tsx";
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     {
         path: "/calculator",
         element: <Calculator />,
+    },
+    {
+        path: "/timer",
+        element: <Timer />,
     },
 ]);
 
